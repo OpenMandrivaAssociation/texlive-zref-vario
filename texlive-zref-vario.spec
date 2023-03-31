@@ -1,6 +1,6 @@
 Name:		texlive-zref-vario
 Version:	63874
-Release:	1
+Release:	2
 Summary:	Extended LaTeX page cross-references with varioref and zref-clever
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/zref-vario
