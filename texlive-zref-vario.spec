@@ -3,7 +3,7 @@ Version:	68846
 Release:	1
 Summary:	Extended LaTeX page cross-references with varioref and zref-clever
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/zref-vario
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/zref-vario
 License:	lppl1.3c
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/zref-vario.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/zref-vario.doc.r%{version}.tar.xz
