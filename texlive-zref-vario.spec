@@ -1,5 +1,5 @@
 Name:		texlive-zref-vario
-Version:	68846
+Version:	72978
 Release:	1
 Summary:	Extended LaTeX page cross-references with varioref and zref-clever
 Group:		Publishing
