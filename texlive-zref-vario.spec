@@ -1,42 +1,26 @@
-Name:		texlive-zref-vario
-Version:	72978
-Release:	1
+%global tl_name zref-vario
+%global tl_revision 77682
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	0.1.12
+Release:	%{tl_revision}.1
 Summary:	Extended LaTeX page cross-references with varioref and zref-clever
 Group:		Publishing
 URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/zref-vario
 License:	lppl1.3c
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/zref-vario.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/zref-vario.doc.r%{version}.tar.xz
-Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/zref-vario.source.r%{version}.tar.xz
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/zref-vario.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/zref-vario.doc.r%{tl_revision}.tar.xz
+Source2:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/zref-vario.source.r%{tl_revision}.tar.xz
 BuildArch:	noarch
-BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+BuildSystem:	texlive
+Requires:	texlive(tools)
+Requires:	texlive(zref-clever)
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-This package offers a compatibility layer for varioref to be
-used alongside zref-clever. It provides \z... counterparts to
-varioref's main reference commands, each of which essentially
-does some (scoped) setup for varioref, then calls the original
-one.
+This package offers a compatibility layer for varioref to be used
+alongside zref-clever. It provides \z... counterparts to varioref's main
+reference commands, each of which essentially does some (scoped) setup
+for varioref, then calls the original one.
 
-%prep
-%setup -c -a1 -a2
-%autopatch -p1
-
-%build
-
-%install
-rm -rf tlpkg
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -a * %{buildroot}%{_texmfdistdir}
-
-%files
-%doc %{_texmfdistdir}/source/latex/zref-vario
-%{_texmfdistdir}/tex/latex/zref-vario
-%doc %{_texmfdistdir}/doc/latex/zref-vario
-
-%post -p %{_sbindir}/texlive.post
-
-%postun
-[ "$1" -eq 0 ] && %{_sbindir}/texlive.post
